@@ -20,6 +20,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import Chart from './Chart';
 import { mainListItems, secondaryListItems } from './listItems';
+import Bind from './Bind'
 
 import Deposits from './Deposits';
 import Orders from './Orders';
@@ -157,7 +158,7 @@ export default function Dashboard() {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           {/* <ClaimReward /> */}
-        <ClaimReward />
+        <Bind />
         </Container>
       </main>
     </div>

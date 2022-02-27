@@ -61,13 +61,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SignInSide() {
-
   const classes = useStyles();
 
   const history = useHistory()
 
+  const to = (name) => {
+    history.replace(name)
+  }
+
   return <div>
-    <Header />
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
@@ -76,54 +78,34 @@ export default function SignInSide() {
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography component="h1" variant="h5">
-            Register
-          </Typography>
-          <form className={classes.form} noValidate onSubmit={(e) => {
-            e.preventDefault()
-            history.replace('/dashboard')
-          }}>
+          <form className={classes.form} noValidate 
+            onSubmit={(e) => {
+              e.preventDefault()
+            
+            }}
+          >
             <TextField
               variant="outlined"
               margin="normal"
               required
               fullWidth
               id="email"
-              label="Email Address"
+              label="Couple email"
               name="email"
               autoComplete="email"
               autoFocus
             />
             <TextField
+              placeholder='1 year'
               variant="outlined"
               margin="normal"
               required
               fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              name="name"
-              label="User Name"
-              type="name"
-              id="name"
-            />
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              name="name"
-              label="Gender"
-              type="name"
-              id="name"
+              id="email"
+              label="Duration"
+              name="email"
+              autoComplete="email"
+              autoFocus
             />
             <Button
               type="submit"
@@ -132,7 +114,7 @@ export default function SignInSide() {
               color="primary"
               className={classes.submit}
             >
-              Register
+              Bind
             </Button>
             <Box mt={5}>
               <Copyright />
@@ -141,5 +123,5 @@ export default function SignInSide() {
         </div>
       </Grid>
     </Grid>
-  </div>
+    </div>
 }

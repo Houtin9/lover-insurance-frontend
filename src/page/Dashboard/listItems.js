@@ -5,6 +5,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import Fav from '@material-ui/icons/Favorite';
+import LogoutIcon from '@material-ui/icons/Room';
 import PeopleIcon from '@material-ui/icons/People';
 import BarChartIcon from '@material-ui/icons/BarChart';
 import LayersIcon from '@material-ui/icons/Layers';
@@ -37,6 +39,15 @@ export const mainListItems = (
     </ListItem>
     </Link>
 
+    <Link to='/bind-couple'>
+    <ListItem button>
+      <ListItemIcon>
+        <Fav />
+      </ListItemIcon>
+      <ListItemText primary="Bind-couple" />
+    </ListItem>
+    </Link>
+
     <ListItem button>
       <ListItemIcon>
         <PeopleIcon />
@@ -58,7 +69,7 @@ export const mainListItems = (
     <Link to='/login'>
     <ListItem button>
       <ListItemIcon>
-        <LayersIcon />
+      <LogoutIcon />
       </ListItemIcon>
       <ListItemText primary="Logout"/>
     </ListItem>

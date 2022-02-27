@@ -146,10 +146,8 @@ export default function Dashboard() {
         }}
         open={open}
       >
-        <div className={classes.toolbarIcon}>
-          <IconButton onClick={handleDrawerClose}>
-            <ChevronLeftIcon />
-          </IconButton>
+        <div  style={{textAlign: "center", padding: 20, fontSize: 30}}>
+        Love Insurance
         </div>
         <Divider />
         <List>{mainListItems}</List>

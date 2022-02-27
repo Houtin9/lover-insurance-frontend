@@ -9,6 +9,7 @@ import Header from './section/Header'
 import Login from './page/Login'
 import Register from './page/Register'
 import Dashboard from "./page/Dashboard";
+import BindCouple from "./page/Dashboard/BindCouple";
 import Reward from "./page/Dashboard/reward"
 import { ThemeProvider, createTheme } from "@material-ui/core";
 
@@ -22,6 +23,9 @@ const App = () => {
           </Route>
           <Route path="/claim-reward">
             <Reward />
+          </Route>
+          <Route path="/bind-couple">
+            <BindCouple />
           </Route>
           <Route path="/register">
             <Register />
@@ -43,6 +47,15 @@ const theme = createTheme({
     primary: {
       // Purple and green play nicely together.
       main: "#FF9900",
+      contrastText: "#fff" //button text white instead of black
+
+    },
+    overrides: {
+      MuiButton: {
+        raisedPrimary: {
+          color: 'white',
+        },
+      },
     }
   },
 });

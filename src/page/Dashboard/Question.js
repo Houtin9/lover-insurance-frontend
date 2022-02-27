@@ -16,6 +16,8 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Hand from '../../hand.jpg'
+import Grid from '@material-ui/core/Grid';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,9 +42,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function RecipeReviewCard() {
+const RecipeReviewCard = (props) => {
+
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
+
+  const { date, name, title} = props
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -61,8 +66,8 @@ export default function RecipeReviewCard() {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Go to Zoo"
-        subheader="September 14, 2022"
+        title={title}
+        subheader={date}
       />
       <CardMedia
         className={classes.media}
@@ -71,7 +76,7 @@ export default function RecipeReviewCard() {
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          Go to Zoo together
+          {name}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -95,3 +100,40 @@ export default function RecipeReviewCard() {
     </Card>
   );
 }
+
+const data = [
+  {
+    date: "2022/03/01",
+    name: "Go to Zoo",
+    title: "task 1"
+  },
+  {
+    date: "2022/03/02",
+    name: "Go Shopping",
+    title: "task 2"
+  },
+  {
+    date: "2022/03/03",
+    name: "Go swimming",
+    title: "task 3"
+  },
+  {
+    date: "2022/03/04",
+    name: "Go to see move",
+    title: "task 4"
+  }
+]
+
+const App = () => {
+  return <Grid container spacing={5}>
+          {
+            data.map((item) => {
+              return <Grid item xs={4}>
+                      <RecipeReviewCard {...item} />
+                     </Grid>
+            })
+          }
+          </Grid>
+}
+
+export default App
